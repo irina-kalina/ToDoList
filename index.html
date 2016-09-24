@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	 <meta charset="utf-8">
+	<title>ToDoList</title>
+	
+	<link type="text/css" rel="stylesheet" href="style.css"/>
+</head>
+<body>
+	<h1>ToDoList</h1>
+	<div id = "app">
+	
+		<div id ="but">
+			<input type="text" id="newTask" value="" width="100px">
+			<input type="button" id="add" value="Добавить задачу">
+			<input type="button" id="delete" value="Очистить список">
+			
+		</div>
+		<div id='main'>
+			<h3>Мои задания:</h3>
+			<div id="task"></div>
+			
+		</div>
+		
+		<div id="foot">
+			
+			<input type="button" id="all" value="Все задачи">
+			<input type="button" id="done" value="Завершенные">
+			
+
+		</div>
+
+		
+	</div>
+
+	<script>
+		document.onkeyup = function (event) {
+    		event = event || window.event;
+
+    		if (event.keyCode === 13) {
+        		addTask();
+    		}
+			return false;
+		};
+
+		
+		var buttonAdd = document.getElementById("add");
+
+		buttonAdd.onclick = function() {
+			addTask();	
+		};
+
+		function addTask() {
+			var newTask = document.getElementById("newTask").value;
+
+			if (newTask == undefined || newTask == "") {
+				return false;
+			}
+
+			var taskDiv = document.getElementById("task");
+			var div = document.createElement("div");
+			taskDiv.appendChild(div).innerText = newTask;
+			div.insertAdjacentHTML("afterBegin", 
+			"<input type = 'checkbox'  class = 'check'> <input type = 'button' class='remove' value='[x]'>" );
+			div.className = 'taskList';
+			newTask = document.getElementById("newTask").value = "";
+
+		};
+
+		
+		var taskDiv = document.getElementById("task");
+
+		taskDiv.onclick = function(event) {
+
+			if (!event.target.classList.contains('remove') ) 
+				return;
+			event.target.parentNode.remove();
+			
+		};
+
+    	
+		var main = document.getElementById("main");
+
+		main.onclick = function(event) {
+
+			if (!event.target.classList.contains('check') ) 
+				return;
+			event.target.parentNode.classList.toggle("highlight");
+
+		};
+
+
+		var buttonDelete = document.getElementById("delete");
+
+		buttonDelete.onclick = function() {
+			var question = confirm("Вы точно хотите удалить все задания?");
+
+			if (question) {
+				var taskDiv = document.getElementById("task");
+				while(taskDiv.lastChild) {
+					taskDiv.removeChild(taskDiv.lastChild);
+				}
+
+			} 
+
+		};
+
+		var sortAll = document.getElementById("all");
+
+		sortAll.onclick = function() {
+			var taskDiv = document.getElementById("task");
+			
+
+			for (var i = 0; i < taskDiv.children.length; ++i) {
+
+				if (taskDiv.children[i].classList == 'hidd') {
+      					 taskDiv.children[i].setAttribute("hidden", "true");
+      				} else {
+      					taskDiv.children[i].removeAttribute("hidden");
+      				}
+			
+   			}
+
+		};
+
+
+		var sortDone = document.getElementById("done");
+
+		sortDone.onclick = function() {
+
+			var taskDiv = document.getElementById("task");
+			
+			for (var i = 0; i < taskDiv.children.length; ++i) {
+				
+      				if ( taskDiv.children[i].classList == 'taskList' ||  taskDiv.children[i].classList == 'hidd'){
+      					 taskDiv.children[i].setAttribute("hidden" , "true");
+      				} else {
+      					taskDiv.children[i].removeAttribute("hidden");
+      				}
+   			 
+   			}
+
+		};
+
+
+	</script>
+
+</body>
+</html>

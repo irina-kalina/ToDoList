@@ -1,0 +1,61 @@
+body{
+	background-color:#D1EEEE ;
+	font-family: cursive;
+	color:#4F4F4F;
+}
+
+#app{
+	border:2px #6C7B8B solid;
+	width: 70%;
+	margin: auto;
+	background-color: #9FB6CD;
+}
+
+#task{
+	background-color: #C6E2FF;
+	margin: 1%;
+	padding:2%;
+}
+
+#main{
+	background-color: #C6E2FF;
+	border:2px #6C7B8B solid;
+	margin: 1%;
+	padding:2%;
+}
+
+#but, #foot{
+	border:2px #6C7B8B solid;
+	margin: 1%;
+	padding:2%;
+	text-align:center;
+	background-color:#C6E2FF;
+}
+
+h1,h3{
+	color:#4F4F4F;
+	text-align: center;
+}
+
+.remove{
+	float:right;
+}
+
+.task{
+	display: inline-block;
+}
+
+.highlight{
+	color : #FA8072;
+	background-color: #B9D3EE;
+	margin: 1%;
+	padding:2%;
+	border:2px #6C7B8B solid;
+}
+
+.taskList, .hidd{
+	background-color: #B9D3EE;
+	margin: 1%;
+	padding:2%;
+	border:2px #6C7B8B solid;
+}
