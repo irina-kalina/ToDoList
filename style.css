@@ -1,35 +1,25 @@
 body{
-	background-color:#D1EEEE ;
+	background-color:#F5F5F5;
 	font-family: cursive;
 	color:#4F4F4F;
 }
 
 #app{
-	border:2px #6C7B8B solid;
 	width: 70%;
 	margin: auto;
-	background-color: #9FB6CD;
-}
-
-#task{
-	background-color: #C6E2FF;
-	margin: 1%;
-	padding:2%;
 }
 
 #main{
-	background-color: #C6E2FF;
-	border:2px #6C7B8B solid;
-	margin: 1%;
-	padding:2%;
+	background-color:  #E6E6FA;
+	margin: 2% 1%;
+	padding:2% 3%;
 }
 
 #but, #foot{
-	border:2px #6C7B8B solid;
 	margin: 1%;
 	padding:2%;
 	text-align:center;
-	background-color:#C6E2FF;
+	background-color:#E6E6FA;
 }
 
 h1,h3{
@@ -41,21 +31,18 @@ h1,h3{
 	float:right;
 }
 
-.task{
-	display: inline-block;
-}
-
 .highlight{
-	color : #FA8072;
-	background-color: #B9D3EE;
+	color : #9C9C9C;
+	text-decoration:line-through; 
+	background-color: #E6E6FA;
 	margin: 1%;
 	padding:2%;
-	border:2px #6C7B8B solid;
+	
 }
 
 .taskList, .hidd{
-	background-color: #B9D3EE;
+	background-color: #E6E6FA;
 	margin: 1%;
 	padding:2%;
-	border:2px #6C7B8B solid;
+	border-bottom: 2px solid #F5F5F5;
 }
